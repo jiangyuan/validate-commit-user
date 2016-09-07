@@ -1,0 +1,52 @@
+{
+  "name": "validate-commit-user",
+  "version": "0.0.0-semanticallly-released.0",
+  "description": "validate the commit user info, include user.name, user.email",
+  "main": "dist/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-preset-es2015": "^6.14.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.4.0",
+    "eslint-config-airbnb": "^10.0.1",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.2.1",
+    "eslint-plugin-react": "^6.2.0",
+    "husky": "^0.11.7",
+    "mocha": "^3.0.2",
+    "rimraf": "^2.5.4",
+    "validate-commit-msg": "^2.8.0"
+  },
+  "scripts": {
+    "start": "npm run test:watch",
+    "prebuild": "rimraf dist && mkdir dist",
+    "build": "cd src && babel index.js -d ../dist && cd ..",
+    "test": "mocha tests",
+    "eslint": "eslint src/",
+    "test:watch": "mocha src/*.test.js -w --compilers js:babel-core/register",
+    "commitmsg": "validate-commit-msg"
+  },
+  "bin": {
+    "validate-commit-user": "bin/validate-commit-user.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiangyuan/validate-commit-user.git"
+  },
+  "keywords": [
+    "git",
+    "hook",
+    "git-hook",
+    "name",
+    "email"
+  ],
+  "author": "jero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiangyuan/validate-commit-user/issues"
+  },
+  "homepage": "https://github.com/jiangyuan/validate-commit-user#readme"
+}
