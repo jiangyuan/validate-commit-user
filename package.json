@@ -1,6 +1,6 @@
 {
   "name": "validate-commit-user",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "validate the commit user info, include user.name, user.email",
   "main": "dist/index.js",
   "dependencies": {
