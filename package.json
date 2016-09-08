@@ -37,7 +37,8 @@
     "commitmsg": "validate-commit-msg",
     "commit": "git-cz",
     "prepublish": "npm run build",
-    "release": "standard-version --no-verify"
+    "release": "standard-version --no-verify",
+    "postrelease": "npm publish --registry https://registry.npmjs.org/"
   },
   "bin": {
     "validate-commit-user": "bin/validate-commit-user.js"
