@@ -3,12 +3,17 @@
   "version": "0.0.0-semanticallly-released.0",
   "description": "validate the commit user info, include user.name, user.email",
   "main": "dist/index.js",
-  "dependencies": {},
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "debug": "^2.2.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.14.0",
     "babel-eslint": "^6.1.2",
     "babel-preset-es2015": "^6.14.0",
     "chai": "^3.5.0",
+    "commitizen": "^2.8.6",
+    "cz-conventional-changelog": "^1.2.0",
     "eslint": "^3.4.0",
     "eslint-config-airbnb": "^10.0.1",
     "eslint-plugin-babel": "^3.3.0",
@@ -24,13 +29,20 @@
     "start": "npm run test:watch",
     "prebuild": "rimraf dist && mkdir dist",
     "build": "cd src && babel index.js -d ../dist && cd ..",
-    "test": "mocha tests",
+    "test": "mocha src/*.test.js --compilers js:babel-core/register",
     "eslint": "eslint src/",
     "test:watch": "mocha src/*.test.js -w --compilers js:babel-core/register",
-    "commitmsg": "validate-commit-msg"
+    "precommit": "npm run eslint && npm run test",
+    "commitmsg": "validate-commit-msg",
+    "commit": "git-cz"
   },
   "bin": {
     "validate-commit-user": "bin/validate-commit-user.js"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "repository": {
     "type": "git",

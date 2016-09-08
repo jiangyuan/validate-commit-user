@@ -1,3 +1,9 @@
 #!/usr/bin/env node
 
-require('../dist')(process.argv.slice(2));
+const config = require(`${process.cwd()}/package.json`).config;
+const vConfig = config && config['validate-commit-user'];
+
+if (vConfig) {
+  require('../dist')(vConfig);
+}
+
