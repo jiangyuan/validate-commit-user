@@ -2,8 +2,9 @@
 
 const config = require(`${process.cwd()}/package.json`).config;
 const vConfig = config && config['validate-commit-user'];
+const check = require('../dist');
 
 if (vConfig) {
-  require('../dist')(vConfig);
+  check('../dist').default(vConfig);
 }
 

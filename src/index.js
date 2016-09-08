@@ -21,7 +21,6 @@ export default (vConfig, fromTest) => {
   let ret = true;
 
   log(`check git user.name [${name}]`);
-  console.log(name, email);
 
   if (!rName.test(name)) {
     ret = false;
