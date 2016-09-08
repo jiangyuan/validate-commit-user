@@ -37,7 +37,7 @@
     "commitmsg": "validate-commit-msg",
     "commit": "git-cz",
     "prepublish": "npm run build",
-    "release": "standard-version"
+    "release": "standard-version --no-verify"
   },
   "bin": {
     "validate-commit-user": "bin/validate-commit-user.js"
