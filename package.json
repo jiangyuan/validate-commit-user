@@ -1,6 +1,6 @@
 {
   "name": "validate-commit-user",
-  "version": "0.0.0-semanticallly-released.0",
+  "version": "0.1.0",
   "description": "validate the commit user info, include user.name, user.email",
   "main": "dist/index.js",
   "dependencies": {
@@ -23,7 +23,7 @@
     "husky": "^0.11.7",
     "mocha": "^3.0.2",
     "rimraf": "^2.5.4",
-    "semantic-release": "^4.3.5",
+    "standard-version": "^2.4.0",
     "validate-commit-msg": "^2.8.0"
   },
   "scripts": {
@@ -36,7 +36,8 @@
     "precommit": "npm run eslint && npm run test",
     "commitmsg": "validate-commit-msg",
     "commit": "git-cz",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "prepublish": "npm run build",
+    "release": "standard-version"
   },
   "bin": {
     "validate-commit-user": "bin/validate-commit-user.js"
