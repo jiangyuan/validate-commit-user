@@ -23,6 +23,7 @@
     "husky": "^0.11.7",
     "mocha": "^3.0.2",
     "rimraf": "^2.5.4",
+    "semantic-release": "^4.3.5",
     "validate-commit-msg": "^2.8.0"
   },
   "scripts": {
@@ -34,7 +35,8 @@
     "test:watch": "mocha src/*.test.js -w --compilers js:babel-core/register",
     "precommit": "npm run eslint && npm run test",
     "commitmsg": "validate-commit-msg",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "bin": {
     "validate-commit-user": "bin/validate-commit-user.js"
