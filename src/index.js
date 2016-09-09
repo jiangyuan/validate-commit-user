@@ -34,7 +34,7 @@ export default (vConfig, fromTest) => {
 
   if (!rEmail.test(email)) {
     ret = false;
-    log(`check git user.name [${email}] ERROR, example [jerojiang@tencent.com]`);
+    log(`check git user.name [${email}] ERROR`);
   } else {
     log(`check git user.email [${email}], pass`);
   }
